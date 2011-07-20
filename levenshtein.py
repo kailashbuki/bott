@@ -3,10 +3,6 @@
 # Author: Kailash Budhathoki [kailash.buki@gmail.com][IOE, Pulchowk Campus, Nepal]
 # Revision: Edited the min function to use the built-in min() function of list
 
-def minimum(a, b, c):
-    temp = [a, b, c]
-    return min(temp)	
-
 def lev_dist(colStr, rowStr):
     clen = colStr.__len__()
     rlen = rowStr.__len__()
@@ -31,7 +27,7 @@ def lev_dist(colStr, rowStr):
             if rowStr[i-1] == colStr[j-1]:
                 min_dist = table[i-1][j-1]
             else:
-                min_dist = minimum(table[i-1][j]+1,table[i][j-1]+1,table[i-1][j-1]+1)
+                min_dist = min(table[i-1][j]+1,table[i][j-1]+1,table[i-1][j-1]+1)
             table[i].append(min_dist)
 
     return table[i][j]
