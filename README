@@ -1,0 +1,12 @@
+About
+------
+Bot on Turing Test shortly abbreviated bott is a chat bot. 
+
+Run
+------
+1. Clone the git repo; git clone git@github.com:kailashbuki/bott.git
+2. python run_bott.py
+
+NOTE:   There's also an exe for windows machine. 
+        Download the compressed file from executable section, 
+        uncompress it and double click it to run.
