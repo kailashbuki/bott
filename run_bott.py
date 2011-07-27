@@ -1,4 +1,4 @@
-from processor import *
+from processor import processMessage 
 from Tkinter import *
 import time
 
