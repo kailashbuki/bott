@@ -1,6 +1,6 @@
 from __future__ import division
 import random
-from levenshtein import *
+from levenshtein import lev_dist
 
 knowledgeBase = [
     ['**INPUT_REPETITION1**'],
