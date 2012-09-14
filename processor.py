@@ -85,7 +85,7 @@ knowledgeBase = [
     ],
     ['WHAT IS YOUR NAME', 'YOUR NAME', 'REFER TO YOU', 'CALL YOU'],
     [
-            
+
         'If you want to refer to me, just call me Jhakri',
         'My name is bott, if that\'s what you mean',
         'I\'d rather be referred to as Jhakri',
@@ -356,7 +356,7 @@ knowledgeBase = [
         'Go to a far away country',
         'Flush your head down the toilet',
         'Don\'t do anything, just float with it'
-        
+
     ],
     ['HAVE YOU', 'HAD YOU'],
     [
@@ -728,7 +728,7 @@ def getAnswer(inputString):
     inputVector = inputString.split(' ')
     inputLength = inputVector.__len__()
 
-    for i in range(knowledgeBase.__len__()/2):
+    for i in range(int(len(knowledgeBase)/2)):
         keyListSize = knowledgeBase[2*i].__len__()
         count  = 0
         tempVector = []
@@ -741,7 +741,7 @@ def getAnswer(inputString):
                     d = lev_dist(k, l)
                     if d<2:
                         tempCount+=1
-                        break 
+                        break
             tempVector.append(tempCount)
             tempVector2.append(tempCount/knowledgeBase[2*i][j].__len__())
         maxMatch = max(tempVector)
@@ -756,7 +756,7 @@ def getAnswer(inputString):
     if countArray.count(maxMatchInKB) >1:
         testList = []
         testList2 = []
-        for m in range(knowledgeBase.__len__()/2):
+        for m in range(int(len(knowledgeBase)/2)):
             if countArray[m] is maxMatchInKB:
                 testList.append(countArray2[m])
                 testList2.append(m)
@@ -767,10 +767,10 @@ def getAnswer(inputString):
         idxActual = testList2[idxTemp]
         #print idxActual
         return knowledgeBase[2*idxActual+1]
-    
+
     keyPos = countArray.index(maxMatchInKB)
     return knowledgeBase[2*keyPos+1]
-    
+
 # checks if the character entered is a punctuation or not
 def isPunc(char):
     if(puncChar.find(char) != -1):
@@ -801,10 +801,10 @@ def processMessage(message):
     global previousInput
     global inputString
     global tempString
-    
+
     previousResponse = responseString
     previousInput = inputString
-    
+
     if not message and previousInput != "**NULL_INPUT**":
         inputString = "**NULL_INPUT**"
     elif not message and (previousInput=="**NULL_INPUT**" or previousInput=="**NULL_INPUT_REPETITION**"):
@@ -816,7 +816,7 @@ def processMessage(message):
 
     if inputString == 'BYE':
         return 'As if i was interested in talking with you'
-    
+
     if inputString == previousInput and message:
         tempString = inputString
         inputString = "**INPUT_REPETITION1**"
@@ -832,7 +832,7 @@ def processMessage(message):
     print 'previous=', previousInput
     print 'input=', inputString
     print 'temp=', tempString
-    '''    
+    '''
     responseNumber = random.randrange(0,response.__len__())
     responseString = response[responseNumber]
     #print responseString
@@ -842,8 +842,8 @@ def processMessage(message):
             if newRandom != responseNumber:
                 return response[newRandom]
     return responseString
-    
-'''                  
+
+'''
 def main():
     msg = ' '
     msg = raw_input('>')
